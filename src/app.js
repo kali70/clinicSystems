@@ -1,14 +1,9 @@
 import Vue from 'vue'
+import 'bootstrap/dist/css/bootstrap.css'
 
+import AppLayout from './theme/Layout.vue'
 const app = new Vue({
-  data: {
-    hello: 'مرحبا بكم في عيادة النرجس للخدمات الطبية',
-    text: 'الدكتورة دجى بن عامر اخصائية العيون و انف و حنجرة'
-  },
-  template: `<div id='app'>
-                <div>{{hello}}</div>
-                <div>{{text}}</div>
-             </div>`
+  ...AppLayout
 })
 
 export { app }

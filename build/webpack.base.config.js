@@ -8,16 +8,28 @@ const config = {
     rules:[
       {
         enforce: "pre",
-        test: /(\.js$)/,
+        test: /(\.js$)|(\.vue$)/,
         loader: "eslint-loader",
+        exclude: /node_modules/
+      },
+      {
+        test: /\.css$/,
+        loader: 'css-loader'
+      },
+      {
+        test: /\.vue$/,
+        loader: 'vue-loader',
+        options: {
+          css: 'css-loader',
+          'scss': 'css-loader|sass-loader'
+        }
+      },
+      {
+        test: /\.js$/,
+        loader: 'babel-loader',
         exclude: /node_modules/
       }
     ]
-  },
-  resolve: {
-    alias: {
-      vue: 'vue/dist/vue.js'
-    }
   },
   output: {
     path: path.resolve(__dirname, "../dist"),

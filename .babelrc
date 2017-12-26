@@ -1,0 +1,14 @@
+{
+  "presets": [
+    [
+      "es2015",
+      {
+        "module": false
+      }
+    ],
+    "stage-2"
+  ],
+  "ignore": [
+    "node_modules/*"
+  ]
+}
